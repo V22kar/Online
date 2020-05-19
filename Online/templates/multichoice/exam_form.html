@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{%block content%}
+{%load crispy_forms_tags%}
+
+<center>
+    <h1  style="color: darkgreen; text-align: center; font-family: cursive; font-size: xx-large;"><b>Update The Question</b></h1>
+    <hr/>
+
+<div style="padding-left: 15px;">
+            <form method="POST" >
+                {% csrf_token %}
+                <table class="table">
+                    {{form}}
+                </table>
+                <input class="btn btn-dark" type="submit">
+            </form>
+</div>
+</center>
+
+{%endblock%}

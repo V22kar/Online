@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{%block content%}
+{%load crispy_forms_tags%}
+<div class="p-5">
+    <h1  style="color: darkgreen; text-align: center; font-family: cursive; font-size: xx-large;"><b>Question Details</b></h1>
+    <div class="card" style="width: 50rem;">
+        
+        <div class="card-body">
+            <h5 class="card-title"> <b>Question</b> : {{exam.Question}}</h5>
+          <p class="card-text"> <b>Option1</b> : {{exam.option1}} </p>
+          <p class="card-text"> <b>Option2</b> : {{exam.option2}} </p>
+          <p class="card-text"> <b>Option3</b> : {{exam.option3}} </p>
+          <p class="card-text"> <b>Option4</b> : {{exam.option4}} </p>
+          <p class="card-text"> <b>Correct Ans</b> : {{exam.corrans}} </p>
+
+          
+          <a class="btn btn-dark" href="/multichoice/examlist/"> BACK </a>
+          
+            
+      </div>
+
+</div>
+{%endblock%}
+
+
+
+
+
+<!---
+    
+    <h1><p><strong>Subject:{{mypost.subject}} :- </strong></p>
+        <p><strong>Date: {{mypost.cr_date}} </strong>
+            <p><strong>Message: {{mypost.msg}} </strong>
+
+            <img class="img-fluid" src="/media/{{mypost.pic}}" />
+
+        <a class="btn btn-dark" href="/social/mypost"> back ..</a>
+
+    </h1>
+    
+
+        </div>
+               --->        
+

@@ -1,0 +1,140 @@
+body{
+    background-color: aqua;
+    font-size: 1.2em;
+    background-repeat: no-repeat;
+
+    background-size: 1350px 1700px;
+    font-family: fantasy;
+
+}
+
+h1{
+    color: red;
+}
+
+#myhead1{
+    font-size: 70px;
+    color: chocolate;
+    text-align: center;
+    text-shadow: 3px 3px 3px black;
+    font-family: cursive;
+    letter-spacing: 30px;
+    background-color: blanchedalmond;
+    border: 2px solid black;
+    border-radius: 20px;
+
+}
+
+.mydiv1{
+    color: chocolate;
+    width: 50%;
+}
+@media(max-width:600px){
+    .mydiv1{
+        background-color: aliceblue;
+        width: 50%;
+    }
+}
+
+
+#myheader1{
+height: 220px;
+
+}
+
+#headfix{
+    position: absolute;
+    top: 170px;
+    left: 25px;
+}
+#headfix h1{
+    font-size: 42px;
+    color:rgb(90, 4, 4);
+    text-align: center;
+    text-shadow: 2px 2px 2px rgb(46, 14, 233);
+    font-family: cursive;
+    letter-spacing: 30px;
+    font-weight: bolder;
+
+
+}
+
+b{
+    color:blue;
+}
+
+.myfooler{
+ 
+ font-size: 15px;
+ color: brown;
+ text-shadow: 1px 1px 1px white;
+ font-family: cursive;
+ font-weight: bolder;
+
+}
+
+
+.mydiv{
+	background-color: white;
+	width: 50%;
+}
+
+@media(max-width: 600px){
+	.mydiv{
+		width: 100%;
+	}
+}
+#myheader1{
+	height: 240px;
+}
+#headfix{
+	position: absolute;
+	top: 170px;
+	width: 100%;
+	z-index: 10;
+}
+.navbar-brand{
+	font-size: 40px;
+	color: #400000;
+	text-shadow: 2px 2px 2px white;
+	font-family: cursive;
+	font-weight: bolder;
+}
+.navbar {
+	font-size: 30px;
+	color: #400000;
+	text-shadow: 2px 2px 2px white;
+	font-family: cursive;
+	font-weight: bolder;
+}
+.navbar-light .navbar-nav .nav-link{
+	color: #400000;
+}
+@media(max-width: 766px){
+	.navbar-nav{
+		background-color: #chartreuse;
+	}
+}
+.myfooter, .myfooter a{
+	font-size: 20px;
+	color: #400000;
+	text-shadow: 2px 2px 2px white;
+	font-family: cursive;
+	font-weight: bolder;
+	background-image: url("/static/images/banner.jpg");
+}
+.myhead2{
+	color: #400000;
+	text-shadow: 2px 2px 2px black;
+	font-family: cursive;
+}
+.myfooter .col-sm-6{
+	border-bottom: 1px solid #400000;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+
+
+
+

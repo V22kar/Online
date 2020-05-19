@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+{%load static%}
+<html>
+<head>
+    <meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        VBaviskar
+    </title>
+    <link href="/static/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</head>
+<body style="background-color:peachpuff;">
+
+
+
+<header id="myheader1">
+	<img class="w-100 h-100" src="/static/images/banner1.jpg" />
+	<div id="headfix">
+
+<nav class="navbar navbar-expand-md navbar-light bg-transparent">
+
+    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="/multichoice/home"><strong class="btn btn-light" style="color: black;">Home </strong> <span class="sr-only">(current)</span></a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/multichoice/contact"><strong class="btn btn-light" style="color: black;">Contact</strong></a>
+            </li>
+            {% if user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link" href="/multichoice/exam"><b class="btn btn-warning">Exam</b></a>
+            </li>
+            {% endif %}
+
+            {% if user.is_superuser %}
+            <li class="nav-item">
+                <a class="nav-link" href="/multichoice/studentprofile"><strong class="btn btn-light" style="color: black;">Student Profile</strong></a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/multichoice/create/"><b class="btn btn-warning">Create Questions</b></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/multichoice/examlist/"><b class="btn btn-warning">Question List</b></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/admin"><b class="btn btn-warning">Admin</b></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/accounts/logout"><b class="btn btn-danger" style="font-style: normal;">Logout</b></a>
+            </li>
+			{% else %}
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link" href="/multichoice/studentprofile"><strong class="btn btn-light" style="color: black;">Student Profiles</strong></a>
+                  </li>
+				            <li class="nav-item">
+                			<a class="nav-link" href="/multichoice/studentprofile/edit/{{ user.studentprofile.id }}"><strong class="btn btn-light" style="color: black;">Edit My Profile</strong></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/accounts/logout"><b class="btn btn-danger" style="font-style: normal;">Logout</b></a>
+                            </li>
+                            {% else %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="/accounts/login" ><strong class="btn btn-primary">Login</strong></a>
+                            </li>
+                            
+				{% endif %}
+            {% endif %}
+            
+
+
+        </ul>
+    </div>
+</nav>
+	</div>
+</header>
+
+
+
+
+{% block content %}
+{% endblock %}
+
+
+
+
+<footer class="myfooler text-center p-0.5">
+  <p>copyright @Vaibhav-Baviskar</p>
+</footer>
+</body>
+
+</html>

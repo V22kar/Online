@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+
+{%block content%}
+{%load crispy_forms_tags%}
+
+
+
+<html>
+<head>
+    <title>Online Exam</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script>
+    $(document).ready(function()
+    {
+        $("#but1").click(function()
+        {
+            $(".rb").show();
+            $(".rb").attr("disabled", true);
+        });
+    });
+
+function displayRadioValue() { 
+    document.getElementById("result").innerHTML = ""; 
+    var ele = document.getElementsByTagName('input'); 
+      
+    for(i = 0; i < ele.length; i++) { 
+          
+        if(ele[i].type="radio") { 
+          
+            if(ele[i].checked) 
+                document.getElementById("result").innerHTML 
+                        +="Q. "+ ele[i].name +" ) " + "<strong>"+" You selected the Answer : " 
+                        + ele[i].value + "</strong>"+"<br>"; 
+        } 
+    } 
+} 
+
+
+
+ </script>
+ 
+ 
+ 
+    
+</head>
+
+<body>
+    <center>
+        <h1  style="color: darkgreen; text-align: center; font-family: cursive; font-size: xx-large;"><b> Online Practice Test</b></h1>
+        <hr/>
+    </center>
+    <div style="padding-left: 50px;">
+            {% for result in exam%}
+            <table>
+                <tr>
+                    <td>
+                        <strong>  {{result.Q_No}} ) {{result.Question}} </strong> <i style="color: red;"> #--Mark( {{result.marks}} ) </i>
+                    </td>
+                </tr>
+                        
+                <tr>
+                    <td>
+                        <input type="radio" id="option1" class="rb" name="{{result.Q_No}}" value="{{result.option1}}">{{result.option1}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="radio"  id="option2" class="rb" name="{{result.Q_No}}" value="{{result.option2}}">{{result.option2}}
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <input type="radio"  id="option3" class="rb" name="{{result.Q_No}}"  value="{{result.option3}}">{{result.option3}}
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>
+                        <input type="radio"  id="option4" class="rb" name="{{result.Q_No}}" value="{{result.option4}}">{{result.option4}}
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label id="corrans" class="rb" style="display: none; color:rgb(235, 13, 13)"><strong> The Correct Answer is: {{result.corrans}} </strong></label>
+                    </td>
+                </tr>
+               
+            </table>
+            <hr/>
+            {%endfor%}
+
+
+        <Button type="submit"  id="but1" onclick="displayRadioValue();">click for results</Button>
+        <hr/>
+
+        <div style="color:blue;  font-size: 20px;" id="result"></div>
+    
+</body>
+</html>
+
+{%endblock%}
